@@ -2,13 +2,13 @@ import de.johoop.jacoco4sbt.JacocoPlugin._
 import de.johoop.jacoco4sbt._
 import play.sbt.PlayImport
 
-name := "sphere-sunrise"
+name := "sphere-sunrise-zr"
 
 organization := "io.sphere"
 
 version := "1.0-SNAPSHOT"
 
-lazy val sunriseDesignVersion = "0.35.0"
+lazy val sunriseDesignVersion = "0.0.1"
 
 lazy val sphereJvmSdkVersion = "1.0.0-M21-2015-11-13-11-39-45-facets-SNAPSHOT"
 
@@ -57,12 +57,13 @@ lazy val commonSettings = testSettings ++ /*testCoverageSettings ++ */Seq (
     Resolver.sonatypeRepo("releases"),
     Resolver.sonatypeRepo("snapshots"),
     Resolver.bintrayRepo("commercetools", "maven"),
+    Resolver.bintrayRepo("ajdinstel", "maven"),
     Resolver.mavenLocal
   ),
   libraryDependencies ++= Seq (
     "io.sphere.sdk.jvm" % "sphere-models" % sphereJvmSdkVersion,
     "io.sphere.sdk.jvm" % "sphere-play-2_4-java-client_2.10" % "1.0.0-M20", // % sphereJvmSdkVersion,
-    "io.sphere" % "sphere-sunrise-design" % sunriseDesignVersion,
+    "ad.sphere" % "sphere-sunrise-design-zr" % sunriseDesignVersion,
     "org.webjars" % "webjars-play_2.10" % "2.4.0-1",
     "com.github.jknack" % "handlebars" % "2.2.3",
     filters,
