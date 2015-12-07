@@ -21,7 +21,7 @@ lazy val jacksonVersion = "2.6.0"
 
 lazy val commonWithTests: ClasspathDep[ProjectReference] = common % "compile;test->test;it->it;pt->pt"
 
-lazy val `sphere-sunrise` = (project in file("."))
+lazy val `sphere-sunrise-zr` = (project in file("."))
   .enablePlugins(PlayJava).configs(IntegrationTest, PlayTest).settings(commonSettings:_*)
   .dependsOn(commonWithTests, `product-catalog`, `setup-widget`, purchase)
   .aggregate(common, `product-catalog`, `setup-widget`, `move-to-sdk`, purchase)
